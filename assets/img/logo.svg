@@ -1,0 +1,69 @@
+<svg width="100%" height="100%" viewBox="0 0 19 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+    xmlns:serif="http://www.serif.com/"
+    style="fill:currentColor;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-640)">
+        <g transform="matrix(0.019048,0,0,0.019048,0,640)">
+            <g>
+                <g transform="matrix(-1,0,-0,-1,1050,547.528)">
+                    <circle cx="525" cy="273.764" r="50"/>
+                </g>
+                <g transform="matrix(-1,0,-0,-1,1343.892,643.02)">
+                    <circle cx="671.946" cy="321.51" r="50"/>
+                </g>
+                <g transform="matrix(-1,0,-0,-1,1343.892,1452.038)">
+                    <circle cx="671.946" cy="726.019" r="50"/>
+                </g>
+                <g transform="matrix(-1,0,-0,-1,1050,1547.528)">
+                    <circle cx="525" cy="773.764" r="50"/>
+                </g>
+                <g transform="matrix(-1,0,-0,-1,756.106,1452.038)">
+                    <circle cx="378.053" cy="726.019" r="50"/>
+                </g>
+                <g transform="matrix(-1,0,-0,-1,574.472,1202.038)">
+                    <circle cx="287.236" cy="601.019" r="50"/>
+                </g>
+                <g transform="matrix(-1,0,-0,-1,574.472,893.02)">
+                    <circle cx="287.236" cy="446.51" r="50"/>
+                </g>
+                <g transform="matrix(-1,0,-0,-1,756.106,643.02)">
+                    <circle cx="378.053" cy="321.51" r="50"/>
+                </g>
+                <circle cx="832.926" cy="747.859" r="37.5"/>
+                <circle cx="748.858" cy="831.927" r="37.5"/>
+                <circle cx="642.926" cy="885.901" r="37.5"/>
+                <circle cx="525.5" cy="904.5" r="37.5"/>
+                <circle cx="408.073" cy="885.901" r="37.5"/>
+                <circle cx="302.142" cy="831.927" r="37.5"/>
+                <circle cx="218.073" cy="747.859" r="37.5"/>
+                <circle cx="164.099" cy="641.927" r="37.5"/>
+                <circle cx="145.5" cy="524.5" r="37.5"/>
+                <circle cx="164.099" cy="407.074" r="37.5"/>
+                <circle cx="218.073" cy="301.142" r="37.5"/>
+                <circle cx="302.142" cy="217.074" r="37.5"/>
+                <circle cx="408.073" cy="163.099" r="37.5"/>
+                <circle cx="525.5" cy="144.5" r="37.5"/>
+                <circle cx="642.926" cy="163.099" r="37.5"/>
+                <circle cx="748.858" cy="217.074" r="37.5"/>
+                <circle cx="832.926" cy="301.142" r="37.5"/>
+                <circle cx="929.509" cy="818.893" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="818.893" cy="929.508" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="679.509" cy="1000.53" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="525" cy="1025" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="370.491" cy="1000.53" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="231.107" cy="929.508" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="120.492" cy="818.893" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="49.472" cy="679.508" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="25" cy="525" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="49.472" cy="370.492" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="120.492" cy="231.107" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="231.107" cy="120.491" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="370.491" cy="49.472" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="525" cy="25" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="679.509" cy="49.472" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="818.893" cy="120.491" r="25" style="fill-opacity:0.64;"/>
+                <circle cx="929.509" cy="231.107" r="25" style="fill-opacity:0.64;"/>
+            </g>
+        </g>
+    </g>
+</svg>

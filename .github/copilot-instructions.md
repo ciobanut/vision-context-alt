@@ -2,9 +2,9 @@ If the user asks a question in Romanian, respond with explanations in Romanian, 
 
 ---
 
-# ✅ Copilot Instructions – WordPress Plugin Architecture
+# Copilot Instructions – WordPress Plugin Architecture
 
-## 🎯 Objective
+## Objective
 
 Generate code for a WordPress plugin using:
 
@@ -17,7 +17,7 @@ Generate code for a WordPress plugin using:
 
 ---
 
-## 📁 Mandatory structure
+## Mandatory structure
 
 ```
 my-plugin/
@@ -49,7 +49,7 @@ DO NOT generate code outside this structure.
 
 ---
 
-## 🧠 Architecture rules
+## Architecture rules
 
 ### 1️⃣ Clean bootstrap
 
@@ -125,7 +125,7 @@ AjaxHandler:
 
 ---
 
-## 🔒 Strict rules
+## Strict rules
 
 * Each class = one reason to change
 * No global functions
@@ -136,7 +136,7 @@ AjaxHandler:
 
 ---
 
-## 🧩 Namespace
+## Namespace
 
 All classes must use:
 
@@ -148,7 +148,7 @@ PSR-4 via Composer.
 
 ---
 
-## ⚙️ Dependency Injection
+## Dependency Injection
 
 * Do not instantiate in methods if it can be injected.
 * Prefer constructor injection.
@@ -156,7 +156,7 @@ PSR-4 via Composer.
 
 ---
 
-## 🔐 Security
+## Security
 
 * Use nonces for AJAX
 * Escape output (esc_html, esc_attr)
@@ -165,7 +165,7 @@ PSR-4 via Composer.
 
 ---
 
-## 🎨 JS Rules
+## JS Rules
 
 * JS in assets/js
 * No inline JS in PHP
@@ -174,7 +174,7 @@ PSR-4 via Composer.
 
 ---
 
-## ❌ What must NOT be generated
+## What must NOT be generated
 
 * Procedural code
 * Single-file plugin
@@ -185,7 +185,7 @@ PSR-4 via Composer.
 
 ---
 
-## 🎯 Quality standard
+## Quality standard
 
 Code must be:
 
