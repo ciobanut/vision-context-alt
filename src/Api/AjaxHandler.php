@@ -1,16 +1,34 @@
 <?php
-class AjaxHandler {
 
-    public function __construct() {
-        add_action('wp_ajax_my_plugin_fetch', [$this, 'handle_fetch']);
+namespace VisionContextAlt\Api;
+
+use VisionContextAlt\Services\DataService;
+
+class AjaxHandler
+{
+
+    private DataService $data_service;
+
+    public function __construct(DataService $data_service)
+    {
+        $this->data_service = $data_service;
     }
 
-    public function handle_fetch() {
-        check_ajax_referer('my_plugin_nonce', 'nonce');
+    public function register(): void
+    {
+        add_action('wp_ajax_visioncontext_alt_generate', [$this, 'handle_generate']);
+    }
 
-        $api = new ExternalApi();
-        $data = $api->fetch_data();
+    public function handle_generate(): void
+    {
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(['message' => 'Insufficient permissions.'], 403);
+        }
 
-        wp_send_json_success($data);
+        check_ajax_referer('visioncontext-alt', 'nonce');
+
+        $result = $this->data_service->process_next();
+
+        wp_send_json_success($result);
     }
 }

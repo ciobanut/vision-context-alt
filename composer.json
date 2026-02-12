@@ -1,0 +1,11 @@
+{
+    "name": "ciobanut/vision-context-alt",
+    "description": "VisionContext Alt Text Generator",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "VisionContextAlt\\": "src/"
+        }
+    },
+    "require": {}
+}

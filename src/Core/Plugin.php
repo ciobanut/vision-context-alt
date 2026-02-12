@@ -1,19 +1,36 @@
 <?php
-namespace MyPlugin\Core;
+namespace VisionContextAlt\Core;
 
-class Plugin {
+use VisionContextAlt\Admin\AdminPage;
+use VisionContextAlt\Admin\Assets;
+use VisionContextAlt\Admin\Settings;
+use VisionContextAlt\Api\AjaxHandler;
 
-    public function run() {
-        $this->init_admin();
-        $this->init_api();
+class Plugin
+{
+
+    private AdminPage $admin_page;
+    private Assets $assets;
+    private Settings $settings;
+    private AjaxHandler $ajax_handler;
+
+    public function __construct(
+        AdminPage $admin_page,
+        Assets $assets,
+        Settings $settings,
+        AjaxHandler $ajax_handler
+    ) {
+        $this->admin_page = $admin_page;
+        $this->assets = $assets;
+        $this->settings = $settings;
+        $this->ajax_handler = $ajax_handler;
     }
 
-    private function init_admin() {
-        new \MyPlugin\Admin\AdminPage();
-        new \MyPlugin\Admin\Assets();
-    }
-
-    private function init_api() {
-        new \MyPlugin\Api\AjaxHandler();
+    public function run()
+    {
+        $this->settings->register();
+        $this->admin_page->register();
+        $this->assets->register();
+        $this->ajax_handler->register();
     }
 }

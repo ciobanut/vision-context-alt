@@ -1,23 +1,23 @@
-Userul poate sa te intrebe in limba romana iar tu raspunzi in explicatii in romana, dar in cod trebuie sa raspunzi in engleza. Nu ignora instructiunile din acest fisier. Daca nu sunt respectate, raspunde cu "Instructiunile din .github/copilot-instructions.md nu au fost respectate.".
+If the user asks a question in Romanian, respond with explanations in Romanian, but code must be in English. Do not ignore the instructions in this file. If they are not followed, respond with "Instructiunile din .github/copilot-instructions.md nu au fost respectate.".
 
 ---
 
 # ✅ Copilot Instructions – WordPress Plugin Architecture
 
-## 🎯 Obiectiv
+## 🎯 Objective
 
-Generează cod pentru un plugin WordPress folosind:
+Generate code for a WordPress plugin using:
 
-* OOP strict
+* Strict OOP
 * Namespace + PSR-4
 * Single Responsibility Principle
-* Arhitectură scalabilă
-* Separarea clară a responsabilităților
-* Fără logică procedurală în afara bootstrap-ului
+* Scalable architecture
+* Clear separation of responsibilities
+* No procedural logic outside the bootstrap
 
 ---
 
-## 📁 Structura obligatorie
+## 📁 Mandatory structure
 
 ```
 my-plugin/
@@ -45,156 +45,156 @@ my-plugin/
 └── assets/
 ```
 
-NU genera cod în afara acestei structuri.
+DO NOT generate code outside this structure.
 
 ---
 
-## 🧠 Reguli de Arhitectură
+## 🧠 Architecture rules
 
-### 1️⃣ Bootstrap curat
+### 1️⃣ Clean bootstrap
 
-`my-plugin.php` trebuie să:
+`my-plugin.php` must:
 
-* Definească metadata plugin
-* Încarce autoload Composer
-* Inițializeze doar clasa principală
+* Define plugin metadata
+* Load Composer autoload
+* Initialize only the main class
 
-Fără hook-uri aici.
-Fără logică aici.
-
----
-
-### 2️⃣ Clasa Core Plugin
-
-* Este orchestrator
-* Inițializează modulele
-* Nu conține logică de business
-* Nu conține HTML
-* Nu face request-uri API
+No hooks here.
+No logic here.
 
 ---
 
-### 3️⃣ Admin Layer
+### 2️⃣ Core Plugin class
+
+* Is the orchestrator
+* Initializes modules
+* Contains no business logic
+* Contains no HTML
+* Makes no API requests
+
+---
+
+### 3️⃣ Admin layer
 
 AdminPage:
 
-* Conține doar UI
-* Doar add_menu_page și render
-* Nu conține logică business
+* Contains only UI
+* Only add_menu_page and render
+* Contains no business logic
 
 Assets:
 
-* Doar enqueue scripts/styles
-* Doar localize_script
+* Only enqueue scripts/styles
+* Only localize_script
 
 Settings:
 
 * register_setting
 * get_option
-* validare
+* validation
 
 ---
 
-### 4️⃣ API Layer
+### 4️⃣ API layer
 
 ExternalApi:
 
-* Doar comunicare cu API extern
-* Doar wp_remote_get / wp_remote_post
-* Nu folosește hook-uri WP
-* Nu face echo
-* Nu trimite JSON
+* Only communication with external API
+* Only wp_remote_get / wp_remote_post
+* Does not use WP hooks
+* Does not echo
+* Does not send JSON
 
 AjaxHandler:
 
-* Doar hook-uri wp_ajax
-* Doar validare nonce
-* Apelează Service layer
-* Trimite JSON response
+* Only wp_ajax hooks
+* Only nonce validation
+* Calls the Service layer
+* Sends JSON response
 
 ---
 
-### 5️⃣ Service Layer
+### 5️⃣ Service layer
 
-* Conține logică business
-* Procesează date
-* Transformă date
-* Poate folosi caching
-* Nu conține HTML
-* Nu conține hook-uri
+* Contains business logic
+* Processes data
+* Transforms data
+* May use caching
+* Contains no HTML
+* Contains no hooks
 
 ---
 
-## 🔒 Reguli stricte
+## 🔒 Strict rules
 
-* Fiecare clasă = un singur motiv de modificare
-* Fără funcții globale
-* Fără cod procedural
-* Fără amestec de HTML și logică
-* Fără apel API direct din AdminPage
-* Fără apel wp_remote_* din AjaxHandler
+* Each class = one reason to change
+* No global functions
+* No procedural code
+* No mixing HTML and logic
+* No direct API calls from AdminPage
+* No wp_remote_* calls from AjaxHandler
 
 ---
 
 ## 🧩 Namespace
 
-Toate clasele trebuie să folosească:
+All classes must use:
 
 ```
-namespace MyPlugin\...
+namespace VisionContextAlt\...
 ```
 
-PSR-4 prin Composer.
+PSR-4 via Composer.
 
 ---
 
 ## ⚙️ Dependency Injection
 
-* Nu crea instanțe direct în metode dacă pot fi injectate.
-* Constructor injection preferat.
-* Evită new ExternalApi() în interiorul metodelor dacă poate fi injectat.
+* Do not instantiate in methods if it can be injected.
+* Prefer constructor injection.
+* Avoid new ExternalApi() inside methods if it can be injected.
 
 ---
 
-## 🔐 Securitate
+## 🔐 Security
 
-* Folosește nonces pentru AJAX
-* Escape la output (esc_html, esc_attr)
-* Sanitize la input
-* Verifică capability (manage_options)
+* Use nonces for AJAX
+* Escape output (esc_html, esc_attr)
+* Sanitize input
+* Check capability (manage_options)
 
 ---
 
 ## 🎨 JS Rules
 
-* JS separat în assets/js
-* Nu inline JS în PHP
-* Comunicarea doar prin AJAX sau REST
-* Folosește datele din wp_localize_script
+* JS in assets/js
+* No inline JS in PHP
+* Communication only via AJAX or REST
+* Use data from wp_localize_script
 
 ---
 
-## ❌ Ce NU trebuie generat
+## ❌ What must NOT be generated
 
-* Cod procedural
-* Plugin într-un singur fișier
-* HTML amestecat cu logică API
-* Lipsa namespace
-* Lipsa composer.json
-* Dependințe hardcodate
+* Procedural code
+* Single-file plugin
+* HTML mixed with API logic
+* Missing namespace
+* Missing composer.json
+* Hardcoded dependencies
 
 ---
 
-## 🎯 Standard de calitate
+## 🎯 Quality standard
 
-Codul trebuie să fie:
+Code must be:
 
-* Ușor testabil
+* Easy to test
 * Modular
-* Extensibil
-* Clar separat pe layere
-* Pregătit pentru scalare
+* Extensible
+* Clearly separated by layers
+* Ready to scale
 
 ---
 
-pentru denumirile commiturilor folosește următoarele convenția: Conventional Commits (feat, fix, refactor, docs, style, test, chore) + o descriere clară a schimbării. De exemplu: `feat: add new API endpoint for fetching data` sau `fix: resolve nonce validation issue in AJAX handler`.
+For commit messages, use Conventional Commits v1 (feat, fix, refactor, docs, style, test, chore) + a clear change description. Example: `feat: add new API endpoint for fetching data` or `fix: resolve nonce validation issue in AJAX handler`.
